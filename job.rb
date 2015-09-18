@@ -16,10 +16,20 @@ class Job
   end
 
   def people_markup
-
+    price_with_flat_markup * @people * 0.012
   end
 
   def type_markup
+    case @type
+    when 'drugs'
+      price_with_flat_markup * 0.075
+    when 'food'
+      price_with_flat_markup * 0.13
+    when 'electronics'
+      price_with_flat_markup * 0.02
+    else
+      0
+    end
 
   end
 
