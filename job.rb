@@ -34,7 +34,7 @@ class Job
   end
 
   def total_price
-
+    @base_price + flat_markup + people_markup + type_markup
   end
 
 end

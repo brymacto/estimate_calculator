@@ -39,12 +39,12 @@ describe Job do
     end
     context 'type is electronics' do
       it 'returns 2%' do
-        expect(@job_4.type_markup).to eql(@job_2.price_with_flat_markup * 0.02)
+        expect(@job_4.type_markup).to eql(@job_4.price_with_flat_markup * 0.02)
       end
     end
     context 'type is none of the above' do
       it 'returns 0%' do
-        expect(@job_2.type_markup).to eql(0)
+        expect(@job_3.type_markup).to eql(0)
       end
     end
   end
@@ -53,6 +53,8 @@ describe Job do
     it 'returns sum of base_price and markups' do
       @jobs.each do |job|
         expect(job.total_price).to eql(job.base_price + job.flat_markup + job.people_markup + job.type_markup)
+        puts job.type
+        puts job.total_price
       end
     end
   end
