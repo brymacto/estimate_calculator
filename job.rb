@@ -11,6 +11,10 @@ class Job
     @base_price * 0.05
   end
 
+  def price_with_flat_markup
+    @base_price + flat_markup
+  end
+
   def people_markup
 
   end
