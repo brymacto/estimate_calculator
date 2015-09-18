@@ -52,9 +52,7 @@ describe Job do
   describe "#total_price" do
     it 'returns sum of base_price and markups' do
       @jobs.each do |job|
-        expect(job.total_price).to eql(job.base_price + job.flat_markup + job.people_markup + job.type_markup)
-        puts job.type
-        puts job.total_price
+        expect(job.total_price).to eql((job.base_price + job.flat_markup + job.people_markup + job.type_markup).round(2))
       end
     end
   end
